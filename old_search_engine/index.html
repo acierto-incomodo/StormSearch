@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        /* Estilo para el selector de idioma */
+        .language-selector {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .language-selector label {
+            font-weight: bold;
+        }
+
+        .language-selector select {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Selector de idioma -->
+    <div class="language-selector">
+        <label for="language">🌐</label>
+        <select id="language">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="eu">Euskera</option>
+        </select>
+    </div>
+
+    <!-- HTML para el contenido -->
+    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google Logo" class="logo" width="272" height="92">
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search Google or type a URL">
+        <button id="searchButton">Search</button>
+    </div>
+    <div class="buttons">
+        <button id="luckyButton">I'm Feeling Lucky</button>
+    </div>
+
+    <script src="./translations.js"></script>
+    <script>
+        // Referencias a elementos
+        const languageSelector = document.getElementById('language');
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        const luckyButton = document.getElementById('luckyButton');
+        const languageLabel = document.querySelector('.language-selector label');
+
+        // Detectar idioma del navegador
+        function detectLanguage() {
+            const browserLanguage = navigator.language || navigator.userLanguage;
+            if (browserLanguage.startsWith('es')) return 'es';
+            if (browserLanguage.startsWith('eu')) return 'eu';
+            return 'en'; // Predeterminado a inglés si no coincide
+        }
+
+        // Cambiar idioma
+        function changeLanguage(language) {
+            const texts = translations[language];
+            searchInput.placeholder = texts.searchPlaceholder;
+            searchButton.textContent = texts.searchButton;
+            luckyButton.textContent = texts.luckyButton;
+            languageLabel.textContent = texts.languageLabel;
+            languageSelector.value = language;
+        }
+
+        // Evento para cambiar idioma manualmente
+        languageSelector.addEventListener('change', function() {
+            changeLanguage(languageSelector.value);
+        });
+
+        // Inicializar con el idioma detectado
+        const initialLanguage = detectLanguage();
+        changeLanguage(initialLanguage);
+
+        // JavaScript para manejar eventos
+        document.getElementById('searchButton').addEventListener('click', function() {
+            const query = document.getElementById('searchInput').value;
+            if (query) {
+                // Redirigir al motor de búsqueda personalizado con el parámetro de consulta
+                const searchEngineURL = 'https://cse.google.com/cse?cx=d6ef5bea99c11e0ad#gsc.tab=0&gsc.q=';
+                window.location.href = `${searchEngineURL}&q=${encodeURIComponent(query)}`;
+            }
+        });
+
+        document.getElementById('luckyButton').addEventListener('click', function() {
+            window.location.href = 'https://www.google.com/doodles';
+        });
+    </script>
+</body>
+</html>

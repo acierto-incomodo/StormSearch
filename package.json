@@ -1,0 +1,43 @@
+{
+  "name": "stormsearch",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "keywords": [],
+  "author": "StormGamesStudios",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "electron": "^38.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.stormgamesstudios.stormsearch",
+    "productName": "StormSearch",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "new_search_engine/icons/",
+        "to": "icons"
+      }
+    ],
+    "win": {
+      "icon": "new_search_engine/icons/icon.png"
+    },
+    "mac": {
+      "icon": "new_search_engine/icons/icon.png"
+    },
+    "linux": {
+      "icon": "new_search_engine/icons/icon.png"
+    }
+  }
+}
