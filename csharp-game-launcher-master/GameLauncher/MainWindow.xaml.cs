@@ -36,13 +36,13 @@ namespace GameLauncher
                 switch (_status)
                 {
                     case LauncherStatus.ready:
-                        PlayButton.Content = "Jugar";
+                        PlayButton.Content = "Abrir";
                         break;
                     case LauncherStatus.failed:
                         PlayButton.Content = "Actualización Fallida - Reintentar";
                         break;
                     case LauncherStatus.downloadingGame:
-                        PlayButton.Content = "Descargando Juego";
+                        PlayButton.Content = "Descargando StormSearch";
                         break;
                     case LauncherStatus.downloadingUpdate:
                         PlayButton.Content = "Descargando Actualización";
@@ -60,7 +60,7 @@ namespace GameLauncher
             rootPath = Directory.GetCurrentDirectory();
             versionFile = Path.Combine(rootPath, "Version.txt");
             gameZip = Path.Combine(rootPath, "Build.zip");
-            gameExe = Path.Combine(rootPath, "Build", "Lethal Company.exe");
+            gameExe = Path.Combine(rootPath, "Build", "StormSearch.exe");
         }
 
         private void CheckForUpdates()
@@ -117,7 +117,7 @@ namespace GameLauncher
             catch (Exception ex)
             {
                 Status = LauncherStatus.failed;
-                MessageBox.Show($"Error al instalar los archivos del juego: {ex}");
+                MessageBox.Show($"Error al instalar los archivos de StormSearch: {ex}");
             }
         }
 
