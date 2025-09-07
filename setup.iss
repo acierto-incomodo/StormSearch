@@ -1,6 +1,6 @@
 [Setup]
 AppName=StormSearch Installer
-AppVersion=1.0.1
+AppVersion=1.2.0
 DefaultDirName={userappdata}\StormGamesStudios\StormPack\StormSearch
 DefaultGroupName=StormGamesStudios
 OutputDir=C:\Users\mapsp\Documents\GitHub\StormSearch\Output
@@ -11,7 +11,7 @@ AppCopyright=Copyright © 2025 StormGamesStudios. All rights reserved.
 VersionInfoCompany=StormGamesStudios
 AppPublisher=StormGamesStudios
 SetupIconFile=icono.ico
-VersionInfoVersion=1.0.1.0
+VersionInfoVersion=1.2.0.0
 DisableDirPage=yes
 DisableProgramGroupPage=yes
 
@@ -45,6 +45,10 @@ Root: HKCU; Subkey: "Software\StormSearch Installer"; ValueType: string; ValueNa
 [UninstallDelete]
 ; Eliminar carpeta del appdata y acceso directo
 Type: filesandordirs; Name: "{app}"
+
+[UninstallRun]
+; Forzar cierre del juego si está abierto antes de desinstalar
+Filename: "taskkill"; Parameters: "/IM StormSearch.exe /F"; Flags: runhidden
 
 [Run]
 ; Ejecutar el lanzador después de la instalación
