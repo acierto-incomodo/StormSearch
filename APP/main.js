@@ -62,6 +62,21 @@ app.on('ready', () => {
                 mainWindow.webContents.reload();
             }
         },
+        //{
+        //    label: 'CardinalAI',
+        //    click: () => {
+        //        const cardinalWindow = new BrowserWindow({
+        //            width: 400,
+        //            height: 600,
+        //            title: 'CardinalAI',
+        //            webPreferences: {
+        //                nodeIntegration: false, // Deshabilitar nodeIntegration por seguridad
+        //                contextIsolation: true // Habilitar aislamiento del contexto
+        //            }
+        //        });
+        //        cardinalWindow.loadURL('https://cardinal-ai-h4rt.vercel.app');
+        //    }
+        //},
         {
             label: 'Otros',
             submenu: [
@@ -114,6 +129,11 @@ app.on('ready', () => {
     mainWindow.webContents.on('context-menu', (event) => {
         contextMenu.popup(mainWindow);
     });
+});
+
+// Enviar la versión de la aplicación al proceso de renderizado
+ipcMain.handle('get-app-version', () => {
+    return packageJson.version;
 });
 
 // Salir de la aplicación cuando todas las ventanas estén cerradas

@@ -1,4 +1,9 @@
-window.addEventListener('DOMContentLoaded', () => {
+const { ipcRenderer } = require('electron');
+
+window.addEventListener('DOMContentLoaded', async () => {
+    // Obtener la versión de la aplicación desde el proceso principal
+    const appVersion = await ipcRenderer.invoke('get-app-version');
+
     // Hacer invisible el footer de la página cargada
     const existingFooter = document.querySelector('footer');
     if (existingFooter) {
@@ -22,7 +27,7 @@ window.addEventListener('DOMContentLoaded', () => {
     footer.style.textAlign = 'center';
     footer.style.padding = '10px';
     footer.style.boxShadow = '0 -2px 5px rgba(0, 0, 0, 0.1)';
-    footer.innerHTML = '© 2025 StormSearch - By StormGamesStudios';
+    footer.innerHTML = `© 2025 StormSearch - By StormGamesStudios | Versión: ${appVersion}`;
 
     // Agregar el footer al cuerpo del documento
     document.body.appendChild(footer);

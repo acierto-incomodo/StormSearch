@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright © StormGamesStudios")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("StormSearch Installer")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.1.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.1+c0b962d5cf223ea1a830caa19e33f66897f56501")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.1+1690bc0ad0b1c73685572a914138074e18d23c97")]
 [assembly: System.Reflection.AssemblyProductAttribute("StormSearch Installer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StormSearch Installer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.1.0")]
