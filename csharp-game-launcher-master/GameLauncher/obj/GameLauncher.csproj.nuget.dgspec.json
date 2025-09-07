@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\Documents\\GitHub\\StormSearch\\csharp-game-launcher-master\\GameLauncher\\GameLauncher.csproj": {}
+    "C:\\Users\\mapsp\\Documents\\GitHub\\StormSearch\\csharp-game-launcher-master\\GameLauncher\\GameLauncher.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\Documents\\GitHub\\StormSearch\\csharp-game-launcher-master\\GameLauncher\\GameLauncher.csproj": {
-      "version": "1.0.0",
+    "C:\\Users\\mapsp\\Documents\\GitHub\\StormSearch\\csharp-game-launcher-master\\GameLauncher\\GameLauncher.csproj": {
+      "version": "1.0.1",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\Documents\\GitHub\\StormSearch\\csharp-game-launcher-master\\GameLauncher\\GameLauncher.csproj",
-        "projectName": "Lethal Company - Launcher",
-        "projectPath": "C:\\Users\\USER\\Documents\\GitHub\\StormSearch\\csharp-game-launcher-master\\GameLauncher\\GameLauncher.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\Documents\\GitHub\\StormSearch\\csharp-game-launcher-master\\GameLauncher\\obj\\",
+        "projectUniqueName": "C:\\Users\\mapsp\\Documents\\GitHub\\StormSearch\\csharp-game-launcher-master\\GameLauncher\\GameLauncher.csproj",
+        "projectName": "StormSearch Installer",
+        "projectPath": "C:\\Users\\mapsp\\Documents\\GitHub\\StormSearch\\csharp-game-launcher-master\\GameLauncher\\GameLauncher.csproj",
+        "packagesPath": "C:\\Users\\mapsp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mapsp\\Documents\\GitHub\\StormSearch\\csharp-game-launcher-master\\GameLauncher\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mapsp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -61,24 +61,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.10, 3.1.10]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.1.32, 3.1.32]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[3.1.0, 3.1.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[3.1.0, 3.1.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"

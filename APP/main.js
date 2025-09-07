@@ -35,6 +35,12 @@ app.on('ready', () => {
     // Crear el menú personalizado
     const menu = Menu.buildFromTemplate([
         {
+            label: 'Inicio',
+            click: () => {
+                mainWindow.loadURL('https://cse.google.com/cse?cx=d6ef5bea99c11e0ad');
+            }
+        },
+        {
             label: 'Atrás',
             click: () => {
                 if (mainWindow.webContents.canGoBack()) {

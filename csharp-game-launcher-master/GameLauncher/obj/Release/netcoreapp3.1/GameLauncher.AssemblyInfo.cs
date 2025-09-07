@@ -14,12 +14,12 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StormGamesStudios")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright © StormGamesStudios")]
-[assembly: System.Reflection.AssemblyDescriptionAttribute("Lethal Company - Launcher and Game Downloader")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d0e3a32477ffcf4366f6d001a19e2cfb4b49e47f")]
-[assembly: System.Reflection.AssemblyProductAttribute("Lethal Company - Launcher")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Lethal Company - Launcher")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("StormSearch Installer")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.1+c0b962d5cf223ea1a830caa19e33f66897f56501")]
+[assembly: System.Reflection.AssemblyProductAttribute("StormSearch Installer")]
+[assembly: System.Reflection.AssemblyTitleAttribute("StormSearch Installer")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.1.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.
 

@@ -37,16 +37,33 @@ namespace GameLauncher
                 {
                     case LauncherStatus.ready:
                         PlayButton.Content = "Abrir";
+
+                        // Abrir automáticamente cuando está listo
+                        if (File.Exists(gameExe))
+                        {
+                            Dispatcher.Invoke(() =>
+                            {
+                                ProcessStartInfo startInfo = new ProcessStartInfo(gameExe);
+                                startInfo.WorkingDirectory = Path.Combine(rootPath, "Build");
+                                Process.Start(startInfo);
+
+                                Close(); // Cierra el launcher después de abrir el juego
+                            });
+                        }
                         break;
+
                     case LauncherStatus.failed:
                         PlayButton.Content = "Actualización Fallida - Reintentar";
                         break;
+
                     case LauncherStatus.downloadingGame:
                         PlayButton.Content = "Descargando StormSearch";
                         break;
+
                     case LauncherStatus.downloadingUpdate:
                         PlayButton.Content = "Descargando Actualización";
                         break;
+
                     default:
                         break;
                 }
@@ -73,7 +90,7 @@ namespace GameLauncher
                 try
                 {
                     WebClient webClient = new WebClient();
-                    Version onlineVersion = new Version(webClient.DownloadString("https://github.com/acierto-incomodo/LethalCompany-Launcher/releases/latest/download/Version.txt"));
+                    Version onlineVersion = new Version(webClient.DownloadString("https://github.com/acierto-incomodo/StormSearch/releases/latest/download/Version.txt"));
 
                     if (onlineVersion.IsDifferentThan(localVersion))
                     {
@@ -108,11 +125,11 @@ namespace GameLauncher
                 else
                 {
                     Status = LauncherStatus.downloadingGame;
-                    _onlineVersion = new Version(webClient.DownloadString("https://github.com/acierto-incomodo/LethalCompany-Launcher/releases/latest/download/Version.txt"));
+                    _onlineVersion = new Version(webClient.DownloadString("https://github.com/acierto-incomodo/StormSearch/releases/latest/download/Version.txt"));
                 }
 
                 webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadGameCompletedCallback);
-                webClient.DownloadFileAsync(new Uri("https://github.com/acierto-incomodo/LethalCompany-Launcher/releases/latest/download/Build.zip"), gameZip, _onlineVersion);
+                webClient.DownloadFileAsync(new Uri("https://github.com/acierto-incomodo/StormSearch/releases/latest/download/Build.zip"), gameZip, _onlineVersion);
             }
             catch (Exception ex)
             {
