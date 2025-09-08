@@ -35,13 +35,13 @@ app.on('ready', () => {
     // Crear el menú personalizado
     const menu = Menu.buildFromTemplate([
         {
-            label: 'Inicio',
+            label: '🏠 Inicio',
             click: () => {
                 mainWindow.loadURL('https://cse.google.com/cse?cx=d6ef5bea99c11e0ad');
             }
         },
         {
-            label: 'Atrás',
+            label: '← Atrás',
             click: () => {
                 if (mainWindow.webContents.canGoBack()) {
                     mainWindow.webContents.goBack();
@@ -49,7 +49,7 @@ app.on('ready', () => {
             }
         },
         {
-            label: 'Adelante',
+            label: '→ Adelante',
             click: () => {
                 if (mainWindow.webContents.canGoForward()) {
                     mainWindow.webContents.goForward();
@@ -57,7 +57,7 @@ app.on('ready', () => {
             }
         },
         {
-            label: 'Recargar',
+            label: '🔄️ Recargar',
             click: () => {
                 mainWindow.webContents.reload();
             }
@@ -78,7 +78,7 @@ app.on('ready', () => {
         //    }
         //},
         {
-            label: 'Otros',
+            label: 'ℹ️ Otros',
             submenu: [
                 {
                     label: 'Acerca de StormSearch',
